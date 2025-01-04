@@ -6,7 +6,7 @@ const List=(props)=>{
     return(
     <div>
         <ul>
-          {todo.map((todoItem,index) => (
+          {todo?.map((todoItem,index) => (
             <TodoItem key={index} todoItem={todoItem}/>
           ))}
         </ul>

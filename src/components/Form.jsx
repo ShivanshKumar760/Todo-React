@@ -1,16 +1,24 @@
 import { useState } from "react"
 
 const Form=(props)=>{
-    const {updateTodoStatus}=props;
-    const [todo,setTodo]=useState([]);
+    const {updateTodoList}=props;
+    // const [todo,setTodo]=useState([]);
     const [inputTodo, setInputTodo] = useState("");
     function insertingTodo(e)
     {
         e.preventDefault();
-        const newTodo=[...todo,inputTodo];
-        setTodo(newTodo);
+        // const newTodo=[...todo,inputTodo];
+        // setTodo(newTodo);
+        // setInputTodo(" ");
+        // updateTodoStatus(newTodo);
+        //new code 
+        console.log(inputTodo);
+        updateTodoList((prevState)=>{
+            console.log(...prevState);
+            console.log([...prevState]);
+            return [...prevState,inputTodo];
+        });
         setInputTodo(" ");
-        updateTodoStatus(newTodo);
 
     }
     return(
